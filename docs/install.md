@@ -10,9 +10,21 @@
 
 ### Linux and macOS Install
 The repo is developed and tested on `Ubuntu 20.04` and `Python 3.9`.
+
+**Python version:** Use **Python 3.9, 3.10, or 3.11**. Python 3.13 is not supported (fugashi and tokenizers fail to build). If you see build errors with Python 3.13, create a conda env with 3.11:
+
+```bash
+conda create -n melotts python=3.11 -y
+conda activate melotts
+```
+
+Then install:
+
 ```bash
 git clone https://github.com/myshell-ai/MeloTTS.git
 cd MeloTTS
+# Optional: install MeCab for Japanese (required for fugashi on first-time build)
+# sudo apt-get install -y libmecab-dev mecab mecab-ipadic-utf8   # Ubuntu/Debian
 pip install -e .
 python -m unidic download
 ```
